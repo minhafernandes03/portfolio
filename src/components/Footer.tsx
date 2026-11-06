@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, brandName }) => {
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
           <span className="font-serif text-lg font-normal tracking-tight block" style={{ color: theme.textMain }}>
-            {brandName.toLowerCase()}
+            {brandName}
           </span>
           <span className="text-xs opacity-60 font-light mt-0.5 block" style={{ color: theme.textMuted }}>
             Portfólio · Produção Publicitária & Multimédia

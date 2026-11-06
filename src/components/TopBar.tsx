@@ -47,7 +47,7 @@ export const TopBar: React.FC<TopBarProps> = ({
           className="text-lg md:text-xl font-serif tracking-normal whitespace-nowrap shrink-0 font-medium transition-transform hover:scale-[1.01]"
           style={{ color: theme.textMain }}
         >
-          {brandName.toLowerCase()}
+          {brandName}
         </a>
 
         {/* Zone 2: 4 clean single-line text navigation links */}
