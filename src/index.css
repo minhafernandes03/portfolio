@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+    /* Default Theme: Água & Jade / Sálvia */
+    --color-bg-base: #0a110e;
+    --color-bg-surface: #101c18;
+    --color-bg-glass: rgba(16, 28, 24, 0.72);
+    --color-border: rgba(94, 142, 122, 0.18);
+    --color-border-hover: rgba(132, 185, 163, 0.35);
+    --color-accent: #52b788;
+    --color-accent-soft: rgba(82, 183, 136, 0.15);
+    --color-accent-glow: rgba(82, 183, 136, 0.4);
+    --color-text-main: #edf5f0;
+    --color-text-muted: #8fa89b;
+    --color-water-highlight: #74c69d;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 160, 130, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 160, 130, 0.4);
+}
