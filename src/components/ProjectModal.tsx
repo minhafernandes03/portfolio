@@ -19,10 +19,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
   onSelectProject,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [activeImage, setActiveImage] = useState<string | null>(null);
 
   // Ao mudar de projeto, o vídeo volta ao estado inicial (imagem + botão play)
   useEffect(() => {
     setIsPlaying(false);
+    setActiveImage(null);
   }, [project?.id]);
 
   useEffect(() => {
@@ -131,13 +133,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               <>
                 {/* Fundo desfocado + imagem inteira (os posters são quadrados) */}
                 <img
-                  src={project.coverImage}
+                  src={activeImage ?? project.coverImage}
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-50"
                 />
                 <img
-                  src={project.coverImage}
+                  src={activeImage ?? project.coverImage}
                   alt={project.title}
                   className="relative w-full h-full object-contain"
                   referrerPolicy="no-referrer"
@@ -157,6 +159,35 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               </>
             )}
           </div>
+
+          {/* Galeria (várias imagens / temporadas) */}
+          {project.gallery && project.gallery.length > 1 && (
+            <div className="flex flex-wrap gap-3 -mt-2">
+              {project.gallery.map((g) => {
+                const selected = (activeImage ?? project.coverImage) === g.src;
+                return (
+                  <button
+                    key={g.src}
+                    onClick={() => {
+                      setActiveImage(g.src);
+                      setIsPlaying(false);
+                    }}
+                    className="group text-left"
+                    title={g.label}
+                    aria-label={`Ver imagem: ${g.label}`}
+                  >
+                    <span
+                      className="block w-20 h-20 rounded-lg overflow-hidden border-2 transition-all"
+                      style={{ borderColor: selected ? theme.accent : theme.border, opacity: selected ? 1 : 0.7 }}
+                    >
+                      <img src={g.src} alt={g.label} className="w-full h-full object-cover" />
+                    </span>
+                    <span className="block mt-1 text-[10px] uppercase tracking-wider opacity-70 max-w-[80px]">{g.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
 
           {/* Project Details Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

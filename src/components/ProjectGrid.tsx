@@ -58,7 +58,7 @@ export const ProjectGrid: React.FC<ProjectGridProps> = ({
 
   const categories = [
     { id: 'all', label: 'Todos os Projetos' },
-    { id: 'campaign', label: 'Campanha 360' },
+    { id: 'campaign', label: 'Campanhas' },
     { id: 'series', label: 'Séries & Streaming' },
     { id: 'convention', label: 'Vídeo Convenção' },
   ];
