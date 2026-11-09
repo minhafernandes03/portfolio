@@ -6,6 +6,8 @@ Site de portfólio (Vite + React + TypeScript).
 1. `npm install`
 2. `npm run dev`
 
+Test
+
 ## Onde editar o conteúdo
 - `src/types/portfolio.ts`: perfil (`INITIAL_PROFILE`) e projetos (`INITIAL_PROJECTS`), incluindo links de vídeo.
 - `public/images/`: imagens dos projetos (referenciadas como `/images/nome.jpg`).
