@@ -76,8 +76,7 @@ export default function App() {
   // Profile data state
   const [profile, setProfile] = useState<ProfileData>(() => {
     try {
-      const saved = localStorage.getItem('mf_portfolio_profile_v2');
-      return saved ? JSON.parse(saved) : INITIAL_PROFILE;
+      return INITIAL_PROFILE;
     } catch {
       return INITIAL_PROFILE;
     }
@@ -86,8 +85,7 @@ export default function App() {
   // Projects state
   const [projects, setProjects] = useState<Project[]>(() => {
     try {
-      const saved = localStorage.getItem('mf_portfolio_projects_v2');
-      return saved ? JSON.parse(saved) : INITIAL_PROJECTS;
+      return INITIAL_PROJECTS;
     } catch {
       return INITIAL_PROJECTS;
     }
@@ -148,8 +146,6 @@ export default function App() {
       localStorage.setItem('mf_portfolio_water_intensity', waterIntensity);
       localStorage.setItem('mf_portfolio_water_speed', waterSpeed.toString());
       localStorage.setItem('mf_portfolio_water_interactive', waterInteractive.toString());
-      localStorage.setItem('mf_portfolio_profile_v2', JSON.stringify(profile));
-      localStorage.setItem('mf_portfolio_projects_v2', JSON.stringify(projects));
     } catch {
       // ignore
     }
