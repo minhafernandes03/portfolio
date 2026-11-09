@@ -19,6 +19,8 @@ export interface Project {
   featured?: boolean;
   externalLink?: string;
   highlights?: string[];
+  /** Imagens extra (ex.: várias temporadas); aparecem como miniaturas clicáveis */
+  gallery?: { src: string; label: string }[];
 }
 
 export interface ThemeConfig {
@@ -202,6 +204,84 @@ export const INITIAL_PROJECTS: Project[] = [
     tools: ['Peças digitais', 'OOH', 'Redes sociais'],
     featured: true,
     externalLink: 'https://drive.google.com/file/d/12QNqs4kOhyCxHgBjFVwFOCQDtJnl2hSJ/view?usp=drive_link',
+    highlights: [ATUACAO],
+  },
+  {
+    id: 'the-boys',
+    title: 'The Boys · Temporadas 2, 3 e 4',
+    subtitle: 'Campanhas Prime Video',
+    category: 'series',
+    categoryLabel: 'Séries & Streaming',
+    client: 'Amazon Prime Video',
+    role: 'Produção, atendimento e coordenação',
+    summary: 'Campanhas de divulgação das temporadas 2, 3 e 4 de The Boys no Prime Video.',
+    description:
+      'Campanhas de divulgação das temporadas 2, 3 e 4 de The Boys no Prime Video. Fui responsável pela produção, atendimento e coordenação do projeto, em colaboração com a equipa criativa da agência. Nas miniaturas podes ver as peças de cada temporada.',
+    coverImage: '/images/the-boys-s4.jpg',
+    mediaType: 'video',
+    videoUrl: 'https://drive.google.com/file/d/1CuQnNz-naU-dNczYBp7aRRTQr_7fC9D7/view?usp=drive_link',
+    tools: ['Peça gráfica', 'Vídeo'],
+    externalLink: 'https://drive.google.com/file/d/1CuQnNz-naU-dNczYBp7aRRTQr_7fC9D7/view?usp=drive_link',
+    highlights: [ATUACAO],
+    gallery: [
+      { src: '/images/the-boys-s2.jpg', label: 'Temporada 2' },
+      { src: '/images/the-boys-s3.jpg', label: 'Temporada 3' },
+      { src: '/images/the-boys-s3-horizontal.jpg', label: 'Temporada 3 · horizontal' },
+      { src: '/images/the-boys-s4.jpg', label: 'Temporada 4' },
+    ],
+  },
+  {
+    id: 'reacher-s2',
+    title: 'Reacher · Temporada 2',
+    subtitle: 'Campanha Prime Video',
+    category: 'series',
+    categoryLabel: 'Séries & Streaming',
+    client: 'Amazon Prime Video',
+    role: 'Produção, atendimento e coordenação',
+    summary: 'Campanha de divulgação da 2.ª temporada de Reacher no Prime Video.',
+    description:
+      'Campanha de divulgação da 2.ª temporada de Reacher no Prime Video. Fui responsável pela produção, atendimento e coordenação do projeto, em colaboração com a equipa criativa da agência.',
+    coverImage: '/images/reacher-s2.jpg',
+    mediaType: 'video',
+    videoUrl: 'https://drive.google.com/file/d/1IA7khEgLCWC3N4PqykUW18u73dvvaeem/view?usp=drive_link',
+    tools: ['Peça gráfica', 'Vídeo'],
+    externalLink: 'https://drive.google.com/file/d/1IA7khEgLCWC3N4PqykUW18u73dvvaeem/view?usp=drive_link',
+    highlights: [ATUACAO],
+  },
+  {
+    id: 'multititle-its-on-prime',
+    title: 'Multititle · It’s On Prime',
+    subtitle: 'Campanha Prime Video',
+    category: 'campaign',
+    categoryLabel: 'Campanha Multititle',
+    client: 'Amazon Prime Video',
+    role: 'Produção, atendimento e coordenação',
+    summary: 'Campanha multititle It’s On Prime, que reúne vários títulos do Prime Video numa só comunicação.',
+    description:
+      'Campanha multititle It’s On Prime, que reúne vários títulos do Prime Video numa só comunicação. Fui responsável pela produção, atendimento e coordenação do projeto, em colaboração com a equipa criativa da agência.',
+    coverImage: '/images/multititle-its-on-prime.jpg',
+    mediaType: 'video',
+    videoUrl: 'https://drive.google.com/file/d/1dr_CwlSCIbU30yJt-Z3rQCw4w_TOCQkt/view?usp=drive_link',
+    tools: ['Peça gráfica', 'Vídeo'],
+    externalLink: 'https://drive.google.com/file/d/1dr_CwlSCIbU30yJt-Z3rQCw4w_TOCQkt/view?usp=drive_link',
+    highlights: [ATUACAO],
+  },
+  {
+    id: 'hub-find-your-happy-place',
+    title: 'HUB · Find Your Happy Place',
+    subtitle: 'Campanha Prime Video',
+    category: 'campaign',
+    categoryLabel: 'Campanha HUB',
+    client: 'Amazon Prime Video',
+    role: 'Produção, atendimento e coordenação',
+    summary: 'Campanha HUB Find Your Happy Place do Prime Video, com vários conteúdos num só aplicativo.',
+    description:
+      'Campanha HUB Find Your Happy Place do Prime Video, com vários conteúdos num só aplicativo. Fui responsável pela produção, atendimento e coordenação do projeto, em colaboração com a equipa criativa da agência.',
+    coverImage: '/images/hub-find-your-happy-place.jpg',
+    mediaType: 'video',
+    videoUrl: 'https://drive.google.com/file/d/1masbYpQNIMucKR1VZxPRNzPIeUmxPLLQ/view?usp=drive_link',
+    tools: ['Peça gráfica', 'Vídeo'],
+    externalLink: 'https://drive.google.com/file/d/1masbYpQNIMucKR1VZxPRNzPIeUmxPLLQ/view?usp=drive_link',
     highlights: [ATUACAO],
   },
   {
